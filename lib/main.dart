@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:untoldtravelapp/screens/HomeScreen';
+
+
+
 void main() {
   runApp(const MyApp());
 }
@@ -23,7 +26,7 @@ class MyApp extends StatelessWidget {
           }
           else {
             return MaterialApp(
-              title: 'ANIMAL FIT',
+              title: 'Untold Travel',
               useInheritedMediaQuery: true,
               // locale: DevicePreview.locale(context),
               // builder: DevicePreview.appBuilder,
@@ -49,10 +52,12 @@ class Splash extends StatelessWidget {
     return Scaffold(
       backgroundColor:
       lightMode ? const Color(0xFFFFFFFF) : const Color(0xFFFFFFFF),
-      body: Center(
+      body: Container(
+          width: MediaQuery.of(context).size.width,
+          height: MediaQuery.of(context).size.height,
           child: lightMode
-              ? Image.asset('assets/UT.png', width: 1010, height:1010)
-              : Image.asset('assets/UT.png', width: 1010, height:1010)),
+              ? Image.asset('assets/photos/UT_water.gif', fit: BoxFit.cover)
+              : Image.asset('assets/photos/UT_water.gif',fit: BoxFit.cover)),
     );
   }
 }
